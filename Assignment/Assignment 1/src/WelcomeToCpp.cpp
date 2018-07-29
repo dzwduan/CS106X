@@ -72,6 +72,27 @@ int stringToInt(string str) {
 
 string intToString(int n) {
     // [TODO: fill in the code]
+    if(n<0){
+        n = -1.0*n;
+        if(n>0&&n<10){
+            char ch = char(n+'0');
+            string str(1,ch);
+            return str;
+        }
+        else{
+            return '-'+intToString(n/10) + intToString(n%10);
+        }
+    }
+    else{
+        if(n>=0&&n<10){
+            char ch = char(n+'0');
+            string str(1,ch);
+            return str;
+        }
+        else{
+            return intToString(n/10) + intToString(n%10);
+        }
+    }
 
 }
 
